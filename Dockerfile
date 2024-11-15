@@ -40,6 +40,7 @@ COPY runtime/ ${PG_APP_HOME}/
 
 COPY entrypoint.sh /sbin/entrypoint.sh
 
+RUN mkdir /var/lib/postgresql && chmod -R 750 /var/lib/postgresql
 RUN chmod 755 /sbin/entrypoint.sh
 
 EXPOSE 5432/tcp
